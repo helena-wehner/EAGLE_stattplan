@@ -21,7 +21,7 @@ library(shinythemes)
 
 ### Define UI
 ui <- dashboardPage(skin = 'green',
-                    dashboardHeader(title = 'Nachhaltig, Bio & Fair Einkaufen - Bayerische Staedte', titleWidth = 500),
+                    dashboardHeader(title = 'Nachhaltig, Bio & Fair Einkaufen - Bayerische Staedte', titleWidth = 600),
                     dashboardSidebar(
                         sidebarMenu(
                             menuItem('Information', tabName = 'Information', icon = icon('info')),
@@ -50,7 +50,7 @@ ui <- dashboardPage(skin = 'green',
                                                     tags$a('https://plattform-n.org/group/sinnsudost/',
                                                            href ='https://plattform-n.org/group/sinnsudost/'))
                                        ),
-                                       # add a third box with Logos
+                                      
                                 ))),
                             # Würzburg UI
                             tabItem(tabName = 'Wuerzburg',

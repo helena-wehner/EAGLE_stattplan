@@ -5,9 +5,9 @@ account: helena-wehner
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2916437
-bundleId: 3691072
+bundleId: 3691371
 url: https://helena-wehner.shinyapps.io/eagle_stattplan/
-when: 1601549943.16455
+when: 1601556545.50146
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: stattplan_data/app.R|stattplan
+ignoredFiles: README.md|stattplan_data/app.R|stattplan
