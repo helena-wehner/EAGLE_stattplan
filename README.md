@@ -16,7 +16,7 @@ Link to Shiny App:
 https://helena-wehner.shinyapps.io/eagle_stattplan/
 
 R Code:
-Use stattplan_data folder and use runApp to let the app.R code run.
+Use stattplan_data folder and use shiny::runApp() to let the app.R code run.
 
 <img src="https://user-images.githubusercontent.com/56886065/94463317-06d4fb00-01bd-11eb-87c2-e354cde38785.png" width="15%"></img> 
 <img src="https://user-images.githubusercontent.com/56886065/94463772-c033d080-01bd-11eb-923e-6d9cd9198e4e.png" width="15%"></img> 
