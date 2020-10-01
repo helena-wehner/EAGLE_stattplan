@@ -7,36 +7,31 @@
 # https://rstudio.github.io/shinydashboard/structure.html
 
 
-name.spc <- c("raster", "sf", "rgdal", "ggplot2", "mapview", "leaflet", "leaflet.extras",
-              "shiny", "shinythemes", "shinydashboard")
-lapply(name.spc, function(x){
-    sc <- try(library(x, character.only = TRUE))
-    if(class(sc)[1] == "try-error"){
-        install.packages(x)
-        library(x, character.only = TRUE)
-    }
-})
-
-
 #################################
 
 ### Data Preparation
-
+library(raster)
+library(rgdal)
+library(leaflet)
+library(leaflet.extras)
+library(shiny)
+library(shinydashboard)
+library(shinythemes)
 
 
 ### Define UI
 ui <- dashboardPage(skin = 'green',
-                    dashboardHeader(title = 'Nachhaltig, Bio & Fair Einkaufen - Bayerische Städte', titleWidth = 500),
+                    dashboardHeader(title = 'Nachhaltig, Bio & Fair Einkaufen - Bayerische Staedte', titleWidth = 500),
                     dashboardSidebar(
                         sidebarMenu(
                             menuItem('Information', tabName = 'Information', icon = icon('info')),
-                            menuItem('Würzburg', tabName = 'Würzburg', icon = icon('city')),
-                            menuItem('Eichstätt', tabName = 'Eichstätt', icon = icon('city')))),
+                            menuItem('Wuerzburg', tabName = 'Wuerzburg', icon = icon('city')),
+                            menuItem('Eichstaett', tabName = 'Eichstaett', icon = icon('city')))),
                     # start dashboard Sidebar
                     dashboardBody(
                         tabItems(
                             # Information UI
-                            tabItem(tabName = 'Information', title = 'Willkommen zu den Stattplänen!',fluidRow(
+                            tabItem(tabName = 'Information', title = 'Willkommen zu den Stattplaenen!',fluidRow(
                                 column(width = 12,
                                        box(
                                            title = strong('Information'),
@@ -58,18 +53,19 @@ ui <- dashboardPage(skin = 'green',
                                        # add a third box with Logos
                                 ))),
                             # Würzburg UI
-                            tabItem(tabName = 'Würzburg',
-                                    fluidPage(leafletOutput('map', width = '100%', height = '700')
+                            tabItem(tabName = 'Wuerzburg',
+                                    fluidPage(leafletOutput('map', width = '100%', height = '550')
                                     )),
                             # Eichstätt UI
-                            tabItem(tabName = 'Eichstätt',
-                                    fluidPage(leafletOutput('map2', width = '100%', height = '700')
+                            tabItem(tabName = 'Eichstaett',
+                                    fluidPage(leafletOutput('map2', width = '100%', height = '550')
                                     ))
                         )))
 
 ### Define server function 
 server <- function(input, output, session){
     # write Info text for Information Output
+  
     
     # Würzburg
     lebensmittel <<- data.frame(id = c(1,2,10,11,12,13,14,16,18,19,23),
@@ -150,7 +146,7 @@ server <- function(input, output, session){
                              providerTileOptions(noWrap = T)) %>%
             addProviderTiles(providers$Stamen.Watercolor, group = 'Stamen Watercolor',providerTileOptions(noWrap = T)) %>%
             addProviderTiles(providers$Esri.WorldImagery, group = 'Esri World Imagery', providerTileOptions(noWrap = T)) %>%
-            addMarkers(lebensmittel$longitude, lebensmittel$latitude,
+            addMarkers(lebensmittel$longitude, lebensmittel$latitude, clusterOptions = markerClusterOptions(),
                        popup = paste0("<b>Name: </b>",lebensmittel$type,"<br>",
                                       "<b>Kategorie: </b>", lebensmittel$Kategorie,"<br>",
                                       "<b>Website: </b>", lebensmittel$Website,
