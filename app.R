@@ -21,46 +21,47 @@ library(shinythemes)
 
 ### Define UI
 ui <- dashboardPage(skin = 'green',
-                    dashboardHeader(title = 'Nachhaltig, Bio & Fair Einkaufen - Bayerische Staedte', titleWidth = 600),
+                    dashboardHeader(title = 'Nachhaltig, Bio & Fair Einkaufen - Bayerische Städte', titleWidth = 600),
                     dashboardSidebar(
                         sidebarMenu(
                             menuItem('Information', tabName = 'Information', icon = icon('info')),
-                            menuItem('Wuerzburg', tabName = 'Wuerzburg', icon = icon('city')),
-                            menuItem('Eichstaett', tabName = 'Eichstaett', icon = icon('city')))),
+                            menuItem('Würzburg', tabName = 'Würzburg', icon = icon('city')),
+                            menuItem('Eichstätt', tabName = 'Eichstätt', icon = icon('city')))),
                     # start dashboard Sidebar
                     dashboardBody(
                         tabItems(
                             # Information UI
-                            tabItem(tabName = 'Information', title = 'Willkommen zu den Stattplaenen!',fluidRow(
+                            tabItem(tabName = 'Information', title = 'Willkommen zu den Stattplänen!',fluidRow(
                                 column(width = 12,
                                        box(
                                            title = strong('Information'),
-                                           helpText('Wähle eine Stadt aus und lasse dir ziegen, wo du dort biologische,
+                                           helpText('Wähle eine Stadt aus und lasse dir zeigen, wo du dort biologische,
                                      regionale und fair gehandelte Produkte einkaufen kannst!
-                                     Klicke auf den Laden und lasse dir Informationen zu der Kategorie (z.B.:
+                                     Klicke auf den Laden und bekomme Informationen zu der Kategorie (z.B.:
                                      Lebensmittel, Reperatur/Gebraucht etc.), sowie einen Link zu der Website
-                                     des Geschaeftes anzeigen. Weitere Staedte werden folgen! <br>
-                                                    Engl.: Select a city and see where to get biological, seasonal and regional
-                                                    food, sustainable produced or second clothes, cosmetics, restaurants etc.
-                                                    in bavarian cities. More cities to come!',
-                                                    div(img(src='https://www.uni-wuerzburg.de/fileadmin/_processed_/9/3/csm_Logo_gruen_transparent_web_cae8cf813f.png',
+                                     des Geschäftes. Weitere Städte werden folgen!',
+                                                            div(img(src='https://www.uni-wuerzburg.de/fileadmin/_processed_/9/3/csm_Logo_gruen_transparent_web_cae8cf813f.png',
                                                             width =100), style = 'text-align: left;'))
                                        ),
-                                       box(title = strong('Kontakt:'),
+                                       box(title = strong('Kontakt'),
                                            helpText("Für Fehlermeldungen oder Ideen (neue Städte etc.)
                                        kontaktiere bitte folgende E-Mailadresse:
                                        sinnsuedost@netzwerk-n.org;",
                                                     tags$a('https://plattform-n.org/group/sinnsudost/',
                                                            href ='https://plattform-n.org/group/sinnsudost/'))
                                        ),
+                                     box(title = strong('Information (engl.)'),
+                                         helpText('Engl.: Select a city and see where to get biological, seasonal and regional
+                                     food, sustainable produced or secondhand clothes, cosmetics, restaurants etc.
+                                     in bavarian cities. More cities to come!'))
                                       
                                 ))),
                             # Würzburg UI
-                            tabItem(tabName = 'Wuerzburg',
+                            tabItem(tabName = 'Würzburg',
                                     fluidPage(leafletOutput('map', width = '100%', height = '550')
                                     )),
                             # Eichstätt UI
-                            tabItem(tabName = 'Eichstaett',
+                            tabItem(tabName = 'Eichstätt',
                                     fluidPage(leafletOutput('map2', width = '100%', height = '550')
                                     ))
                         )))
