@@ -39,7 +39,7 @@ ui <- dashboardPage(skin = 'green',
                                      regionale und fair gehandelte Produkte einkaufen kannst!
                                      Klicke auf den Laden und lasse dir Informationen zu der Kategorie (z.B.:
                                      Lebensmittel, Reperatur/Gebraucht etc.), sowie einen Link zu der Website
-                                     des Gesch?ftes anzeigen.',
+                                     des Geschaeftes anzeigen.',
                                                     div(img(src='https://www.uni-wuerzburg.de/fileadmin/_processed_/9/3/csm_Logo_gruen_transparent_web_cae8cf813f.png',
                                                             width =100), style = 'text-align: left;'))
                                        ),
