@@ -12,5 +12,8 @@ be added to this application.
 
 If you have any suggestions, wishes or hints, please let me know (write a message via "Iusses" Tab).
 
+Link to Shiny App:
+https://helena-wehner.shinyapps.io/eagle_stattplan/
+
 <img src="https://user-images.githubusercontent.com/56886065/94463317-06d4fb00-01bd-11eb-87c2-e354cde38785.png" width="15%"></img> 
 <img src="https://user-images.githubusercontent.com/56886065/94463772-c033d080-01bd-11eb-923e-6d9cd9198e4e.png" width="15%"></img> 
