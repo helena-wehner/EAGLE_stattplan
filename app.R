@@ -119,8 +119,8 @@ server <- function(input, output, session){
     # Eichstätt
     lebensmittel_ei <<- data.frame(id = c(1,2,3,4,5,6), Kategorie = c('Lebensmittel','Lebensmittel','Lebensmittel','Lebensmittel',
                                                                       'Lebensmittel','Lebensmittel'),
-                                   longitude = c(11.1829, 11.17846, 11.18412, 11.17708, 11.18058, 11.18389),
-                                   latitude = c(48.89448, 48.8936, 48.8938, 48.895, 48.89351, 48.89384),
+                                   longitude = c(11.1829, 11.17846, 11.18412, 11.17708, 11.18058, 11.18363),
+                                   latitude = c(48.89448, 48.8936, 48.8938, 48.895, 48.89351, 48.89372),
                                    Name = c('Einfach so','Bella Vita','Schnellers Backstuben','Baeckerei Schneller','Baeckerei Schneller',
                                             'Weltbruecke Eichstaett'),
                                    Website = c('https://www.unverpackt-eichstaett.de/','https://www.biomarkt.de/7749_Biomarkt_Bella_Vita.html',
